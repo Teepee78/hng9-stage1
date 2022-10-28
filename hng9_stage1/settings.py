@@ -44,9 +44,16 @@ INSTALLED_APPS = [
 
     # rest framework
     'rest_framework',
+
+    # CORS
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    # CORS MiddleWare
+    'corsheaders.middleware.CorsMiddleware',
+
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,3 +137,6 @@ STATICFILES_DIR = (os.path.join(BASE_DIR, 'static'))
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CORS_ALLOW_ALL_ORIGINS = True
