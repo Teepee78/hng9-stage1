@@ -7,7 +7,7 @@ from .models import MyInfo
 # Create your views here.
 def MyInfoView_func(request):
     info = MyInfo.objects.all()
-    serializer = MyInfoSerializer(info, many=True)
+    serializer = MyInfoSerializer(info)
     return JsonResponse(serializer.data, safe=False)
 
 class MyInfoView(ListAPIView):
